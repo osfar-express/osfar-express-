@@ -68,12 +68,6 @@ git push origin main
 # Activar Pages en settings
 ```
 
-### Opción 3: Netlify (Alternativa)
-```bash
-# Arrastra la carpeta a https://app.netlify.com
-# Espera a que se despliegue
-# ¡Listo!
-```
 
 ## 📋 Requisitos Previos
 
@@ -92,13 +86,6 @@ const whatsappNumber = '595982392681'; // TU NÚMERO AQUÍ
 
 Formato: `595XXXXXXXXXXX` (sin +, sin espacios)
 
-### 2. Integrar Pago Fácil
-1. Regístrate en https://www.pagofacil.net
-2. Obtén tu Merchant ID
-3. Edita en `index.html`:
-```javascript
-const merchantId = 'TU_MERCHANT_ID_AQUI';
-```
 
 ### 3. Agregar tus Productos
 Edita el array `products` en `index.html`:
@@ -128,11 +115,6 @@ osfar-express/
 ## 🔧 Variables de Entorno (Opcional)
 
 Si usas backend:
-```bash
-PAGO_FACIL_MERCHANT_ID=tu_id
-PAGO_FACIL_API_KEY=tu_api_key
-WHATSAPP_NUMBER=595982392681
-```
 
 ## 📱 Responsive Design
 
