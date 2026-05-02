@@ -1,0 +1,7 @@
+# En tu carpeta osfar-express
+git init
+git add .
+git commit -m "OSFAR Express"
+git branch -M main
+git remote add origin https://github.com/TU_USUARIO/osfar-express.git
+git push -u origin main
