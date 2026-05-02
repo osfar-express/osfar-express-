@@ -1,0 +1,22 @@
+{
+  "name": "osfar-express",
+  "version": "1.0.0",
+  "description": "Tienda ecommerce profesional para vender hogar, cocina y electrónica",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'No build step needed for static site'",
+    "lint": "echo 'No linting configured yet'"
+  },
+  "keywords": [
+    "ecommerce",
+    "paraguay",
+    "tienda",
+    "online-store"
+  ],
+  "author": "OSFAR Express",
+  "license": "MIT",
+  "dependencies": {
+    "@vercel/speed-insights": "^1.1.0"
+  }
+}

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="OSFAR Express - Tienda online de hogar, cocina y electrónica en Paraguay">
+    <title>OSFAR Express - Tienda Online Paraguay</title>
+    
+    <!-- Vercel Speed Insights -->
+    <script>
+        window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            text-align: center;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 12px 24px;
+            border: none;
+            background: white;
+            cursor: pointer;
+            border-radius: 25px;
+            font-size: 1rem;
+            transition: all 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .filter-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .filter-btn.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .product-icon {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .product-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            color: #667eea;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .product-rating {
+            color: #ffc107;
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        .add-to-cart-btn {
+            width: 100%;
+            padding: 12px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 10px;
+        }
+
+        .add-to-cart-btn:hover {
+            background: #5568d3;
+        }
+
+        .cart-icon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            cursor: pointer;
+            font-size: 1.5rem;
+            z-index: 1000;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #e74c3c;
+            color: white;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25d366;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: transform 0.3s;
+            z-index: 1000;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .products {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 15px;
+            }
+
+            .product-card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🏠 OSFAR EXPRESS</h1>
+            <p class="tagline">Tu tienda online de confianza en Paraguay 🇵🇾</p>
+        </div>
+    </header>
+
+    <div class="cart-icon" onclick="alert('Carrito de compras - Funcionalidad próximamente')">
+        🛒
+        <span class="cart-count" id="cartCount">0</span>
+    </div>
+
+    <div class="container">
+        <div class="filters">
+            <button class="filter-btn active" onclick="filterProducts('all')">Todos</button>
+            <button class="filter-btn" onclick="filterProducts('hogar')">🏠 Hogar</button>
+            <button class="filter-btn" onclick="filterProducts('cocina')">🍳 Cocina</button>
+            <button class="filter-btn" onclick="filterProducts('electronica')">📱 Electrónica</button>
+        </div>
+
+        <div class="products" id="productsContainer">
+            <!-- Products will be inserted here by JavaScript -->
+        </div>
+    </div>
+
+    <a href="https://wa.me/595982392681?text=Hola,%20me%20interesa%20comprar%20en%20OSFAR%20Express" 
+       class="whatsapp-btn" 
+       target="_blank">
+        💬 WhatsApp
+    </a>
+
+    <footer>
+        <div class="container">
+            <h3>OSFAR Express</h3>
+            <p>📱 WhatsApp: +595 982 392 681</p>
+            <p>📧 info@osfar.com.py</p>
+            <p>© 2025 OSFAR Express - Todos los derechos reservados</p>
+            <p style="margin-top: 20px;">
+                ⭐⭐⭐⭐⭐<br>
+                "Excelente servicio y productos de calidad" - María G.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Product catalog
+        const products = [
+            // Hogar
+            { id: 1, name: 'Juego de Sábanas Premium', category: 'hogar', price: 150000, icon: '🛏️', rating: 5 },
+            { id: 2, name: 'Toallas de Baño Set x6', category: 'hogar', price: 120000, icon: '🧺', rating: 5 },
+            { id: 3, name: 'Cortinas Blackout', category: 'hogar', price: 180000, icon: '🪟', rating: 4 },
+            { id: 4, name: 'Alfombra Decorativa', category: 'hogar', price: 200000, icon: '🎨', rating: 5 },
+            { id: 5, name: 'Cojines Decorativos x4', category: 'hogar', price: 80000, icon: '🛋️', rating: 4 },
+            { id: 6, name: 'Espejo de Pared Grande', category: 'hogar', price: 250000, icon: '🪞', rating: 5 },
+            
+            // Cocina
+            { id: 7, name: 'Juego de Ollas Antiadherentes', category: 'cocina', price: 280000, icon: '🍳', rating: 5 },
+            { id: 8, name: 'Batería de Cocina 12 Piezas', category: 'cocina', price: 350000, icon: '🥘', rating: 5 },
+            { id: 9, name: 'Licuadora Industrial', category: 'cocina', price: 220000, icon: '🥤', rating: 4 },
+            { id: 10, name: 'Juego de Cuchillos Profesional', category: 'cocina', price: 180000, icon: '🔪', rating: 5 },
+            { id: 11, name: 'Vajilla Completa 24 Piezas', category: 'cocina', price: 320000, icon: '🍽️', rating: 5 },
+            { id: 12, name: 'Cafetera Express', category: 'cocina', price: 450000, icon: '☕', rating: 5 },
+            
+            // Electrónica
+            { id: 13, name: 'Ventilador de Pie Industrial', category: 'electronica', price: 380000, icon: '💨', rating: 5 },
+            { id: 14, name: 'Plancha a Vapor Profesional', category: 'electronica', price: 150000, icon: '👔', rating: 4 },
+            { id: 15, name: 'Aspiradora Robot', category: 'electronica', price: 850000, icon: '🤖', rating: 5 },
+            { id: 16, name: 'Aire Acondicionado Portátil', category: 'electronica', price: 1200000, icon: '❄️', rating: 5 },
+            { id: 17, name: 'Microondas Digital', category: 'electronica', price: 420000, icon: '📟', rating: 4 },
+            { id: 18, name: 'Calefactor Eléctrico', category: 'electronica', price: 280000, icon: '🔥', rating: 4 }
+        ];
+
+        let cart = [];
+        let currentFilter = 'all';
+
+        // Format price in Guaraníes
+        function formatPrice(price) {
+            return '₲ ' + price.toLocaleString('es-PY');
+        }
+
+        // Render products
+        function renderProducts(filter = 'all') {
+            const container = document.getElementById('productsContainer');
+            const filteredProducts = filter === 'all' 
+                ? products 
+                : products.filter(p => p.category === filter);
+
+            container.innerHTML = filteredProducts.map(product => `
+                <div class="product-card" data-category="${product.category}">
+                    <div class="product-icon">${product.icon}</div>
+                    <div class="product-name">${product.name}</div>
+                    <div class="product-rating">${'⭐'.repeat(product.rating)}</div>
+                    <div class="product-price">${formatPrice(product.price)}</div>
+                    <button class="add-to-cart-btn" onclick="addToCart(${product.id})">
+                        Agregar al Carrito
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        // Filter products
+        function filterProducts(category) {
+            currentFilter = category;
+            renderProducts(category);
+            
+            // Update active button
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+
+        // Add to cart
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            cart.push(product);
+            updateCartCount();
+            
+            // Show success message
+            alert(`✅ ${product.name} agregado al carrito!`);
+        }
+
+        // Update cart count
+        function updateCartCount() {
+            document.getElementById('cartCount').textContent = cart.length;
+        }
+
+        // Initialize
+        renderProducts();
+        
+        // Track page view for Speed Insights
+        if (window.si) {
+            window.si('event', 'pageview');
+        }
+    </script>
+</body>
+</html>
