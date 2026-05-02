@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSFAR Express - Hogar, Cocina y Electrónica en Paraguay</title>
+    <meta name="description" content="Tienda ecommerce completa para Paraguay - Hogar, Cocina y Electrónica">
+    
+    <!-- Vercel Web Analytics -->
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 3rem 0;
+            background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+        }
+        
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+        
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .category-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+        }
+        
+        .category-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .category-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .features {
+            background: #f8f9fa;
+            padding: 3rem 0;
+            margin: 3rem 0;
+        }
+        
+        .features h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+        
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature h3 {
+            margin-bottom: 0.5rem;
+            color: #667eea;
+        }
+        
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 2rem 0;
+            transition: background 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background: #764ba2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🏪 OSFAR Express</h1>
+        <p>Tu tienda de confianza en Paraguay</p>
+    </header>
+    
+    <div class="hero">
+        <div class="container">
+            <h2>Hogar, Cocina y Electrónica al mejor precio</h2>
+            <p>Descubre nuestra amplia selección de productos de calidad</p>
+            <a href="#contacto" class="cta-button">Comprar Ahora</a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <h2 style="text-align: center; margin-bottom: 2rem;">Nuestras Categorías</h2>
+        <div class="categories">
+            <div class="category-card">
+                <h3>🏠 Hogar</h3>
+                <p>Encuentra todo lo que necesitas para tu hogar: muebles, decoración, textiles y más. Crea el espacio perfecto para tu familia.</p>
+            </div>
+            
+            <div class="category-card">
+                <h3>🍳 Cocina</h3>
+                <p>Equipamiento completo para tu cocina: ollas, sartenes, electrodomésticos y utensilios. Cocina como un profesional.</p>
+            </div>
+            
+            <div class="category-card">
+                <h3>⚡ Electrónica</h3>
+                <p>Tecnología de última generación: smartphones, computadoras, audio, video y accesorios. Mantente conectado.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="features">
+        <div class="container">
+            <h2>¿Por qué elegir OSFAR Express?</h2>
+            <div class="feature-list">
+                <div class="feature">
+                    <div class="feature-icon">🚚</div>
+                    <h3>Envío Rápido</h3>
+                    <p>Entrega a todo Paraguay</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">💳</div>
+                    <h3>Pago Fácil</h3>
+                    <p>Múltiples métodos de pago</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">✅</div>
+                    <h3>Garantía</h3>
+                    <p>Productos garantizados</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">💬</div>
+                    <h3>Atención WhatsApp</h3>
+                    <p>Soporte 24/7</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container" id="contacto">
+        <div style="text-align: center; padding: 3rem 0;">
+            <h2>¿Listo para comprar?</h2>
+            <p style="margin: 1rem 0; color: #666;">Contáctanos ahora y recibe atención personalizada</p>
+            <a href="https://wa.me/595981234567" class="cta-button" target="_blank">
+                💬 Contactar por WhatsApp
+            </a>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 OSFAR Express. Todos los derechos reservados.</p>
+            <p style="margin-top: 0.5rem; opacity: 0.8;">Hogar, Cocina y Electrónica en Paraguay</p>
+        </div>
+    </footer>
+</body>
+</html>
