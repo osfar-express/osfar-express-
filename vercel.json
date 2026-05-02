@@ -1,0 +1,24 @@
+{
+  "buildCommand": "",
+  "devCommand": "",
+  "installCommand": "",
+  "framework": null,
+  "outputDirectory": ".",
+  "public": true,
+  "rewrites": [
+    {
+      "source": "/:path*",
+      "destination": "/index.html"
+    }
+  ],
+  "env": {
+    "PAGO_FACIL_MERCHANT_ID": "@pago_facil_merchant_id",
+    "WHATSAPP_NUMBER": "@whatsapp_number"
+  },
+  "functions": {
+    "api/payment.js": {
+      "memory": 128,
+      "maxDuration": 30
+    }
+  }
+}
