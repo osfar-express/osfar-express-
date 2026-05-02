@@ -31,5 +31,5 @@
   "homepage": "https://osfar-express.vercel.app",
   "engines": {
     "node": ">=14.0.0"
-  }
+}
 }
